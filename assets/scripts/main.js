@@ -1,44 +1,44 @@
 console.log ('Script is loaded 🔥');
 
-
 var result = document.getElementById('result-box')
+var historyList = document.getElementById('history-box')
 
-var opr = null
-var num1 = 0
-var num2 = 0
-
-//TODO: add logic for multiple numbers transaction
+var expr = []
 
 function handleButtonClick (cmd) {
-    if(!isNaN(cmd)) {
+    if(!isNaN(cmd) || cmd === '.') {
         // cmd is a number
         result.value += cmd
-
-
     }
     else {
         switch (cmd) {
-            case 'AC' : result.value = ''; break;
+            case 'AC' : 
+                result.value = ''; 
+                historyList.innerHTML = '';
+                expr = []
+                break;
             case 'CLR': 
                 result.value = result.value.slice(0, -1); 
                 break;
-            case 'PER': 
-            case 'DIV':
-            case 'MUL':
-            case 'SUB':
-            case 'ADD':
-                num1 = parseInt(result.value)
-                opr = cmd
+            case '%': // modulus operator
+            case '/':
+            case '*':
+            case '-':
+            case '+':
+                expr.push(result.value) // pushing number
                 result.value = ''
+
+                expr.push(cmd) // pushing operand
                 break;
-            case 'RES':
-                num2 = parseInt(result.value)
-                //Todo: add logic for multiple operations
-                result.value = num1 + num2
+            case '=':
+                expr.push(result.value) // pushing number
+                result.value = ''
+                // evaluate the string of expression 
+                result.value = eval(expr.join('')).toFixed(3)
+
                 break;
             case 'DEC': //Todo: add logic for Decimal numbers
         }
+        historyList.innerHTML = expr.join(' ')
     }
-
-    console.log(num1, opr, num2, result.value)
 }
