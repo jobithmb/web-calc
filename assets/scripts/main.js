@@ -37,7 +37,14 @@ function handleButtonClick (cmd) {
                 result.value = eval(expr.join('')).toFixed(3)
 
                 break;
-            case 'DEC': //Todo: add logic for Decimal numbers
+            case 'TOG':
+                if(document.body.className.includes('dark')) {
+                    document.body.className = ''
+                }
+                else {
+                    document.body.className = 'dark'
+                }
+                break;
         }
         historyList.innerHTML = expr.join(' ')
     }

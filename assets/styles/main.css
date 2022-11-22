@@ -2,7 +2,7 @@
 /* variables */
 :root {
     --accent: #F5692B;
-    --bg-dark: #05090E;
+    --bg-dark: #243441;
     --bg-light: #EBEBEB;
     --bg-lighter: #F0EEEE;
     --text-accent: #B04017;
@@ -39,6 +39,12 @@ main.wrapper {
     padding: 5rem 1rem;
     background-color: var(--bg-light);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+
+    transition: background-color ease-in-out 0.3s;
+}
+
+.dark .calc-body {
+    background-color: var(--bg-dark);
 }
 
 .calc-display {
@@ -55,12 +61,24 @@ main.wrapper {
     outline: none;
     color: var(--text-dark);
     margin-bottom: 3rem;
+    transition: color ease-in-out 0.3s;
+}
+
+.dark .calc-display__result {
+    color: var(--text-digit);
 }
 
 .calc-display__history {
     text-align: right;
     color: var(--text-digit);
     font-size: 2rem;
+    line-height: 3rem;
+    height: 3rem;
+    transition: color ease-in-out 0.3s;
+}
+
+.dark .calc-display__history {
+    color: var(--text-control);
 }
 
 .calc-buttons {
@@ -95,7 +113,7 @@ main.wrapper {
     background-color: var(--bg-lighter);
     text-shadow: inset 0px 0px 1px rgba(170, 170, 170, 0.15);
     box-shadow: 0px 5px 2px rgba(170, 170, 170, 0.15);
-    transition: box-shadow ease-in-out 0.1s;
+    transition: box-shadow ease-in-out 0.1s, background-color ease-in-out 0.3s;
 }
 
 .calc-button:active {
@@ -109,10 +127,37 @@ main.wrapper {
 .calc-button.control {
     color: var(--accent);
 }
-.calc-button.x2 {
-    width: 14rem; /* WIP */
+.calc-button.inverted {
     background-color: var(--accent);
     color: white;
 }
+
+.dark .calc-button {
+    color: var(--text-digit);
+    background-color: var(--bg-dark);
+    box-shadow: 0px -5px 4px rgba(170, 170, 170, 0.15), 
+                0px 5px 4px rgba(10, 10, 10, 0.15);
+}
+
+.dark .calc-button:active {
+    box-shadow: inset 0px -3px 2px rgba(170, 170, 170, 0.15),
+                inset 0px 3px 2px rgba(10, 10, 10, 0.15);
+}
+
+.dark .calc-button.digit {
+    color: var(--text-control);
+}
+
+.dark .calc-button.control {
+    color: var(--accent);
+}
+
+.dark .calc-button.inverted {
+    background-color: var(--accent);
+    color: white;
+}
+.calc-button i.ri-sun-line { display: none; }
+.dark .calc-button i.ri-sun-line { display: block; }
+.dark .calc-button i.ri-moon-line { display: none; }
 
 

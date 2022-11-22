@@ -14,38 +14,42 @@
     <main class="wrapper">
         <div class="calc-body">
             <div class="calc-display">
-                <input type="text" id="result-box" class="calc-display__result"></input>
+                <input type="text" id="result-box" class="calc-display__result" value="5768"></input>
                 <div id="history-box" class="calc-display__history">Vanilla JS Calc</div>
             </div>
             <div class="calc-buttons">
                 <div class="calc-buttons-row">
+                    <button class="calc-button digit control" data-command="RES" onclick="handleButtonClick('TOG')">
+                        <i class="ri-sun-line"></i>
+                        <i class="ri-moon-line"></i>
+                    </button>
                     <button class="calc-button control" data-command="AC" onclick="handleButtonClick('AC')">AC</button>
                     <button class="calc-button control" data-command="CLR" onclick="handleButtonClick('CLR')"><i class="ri-delete-back-2-line"></i></button>
                     <button class="calc-button control" data-command="PER" onclick="handleButtonClick('%')"><i class="ri-percent-line"></i></button>
-                    <button class="calc-button control" data-command="DIV" onclick="handleButtonClick('/')"><i class="ri-divide-line"></i></button>
                 </div>
                 <div class="calc-buttons-row">
                     <button class="calc-button digit" data-command="7" onclick="handleButtonClick(7)"><i class="ri-number-7"></i></button>
                     <button class="calc-button digit" data-command="8" onclick="handleButtonClick(8)"><i class="ri-number-8"></i></button>
                     <button class="calc-button digit" data-command="9" onclick="handleButtonClick(9)"><i class="ri-number-9"></i></button>
-                    <button class="calc-button control" data-command="MUL" onclick="handleButtonClick('*')"><i class="ri-close-line"></i></button>
+                    <button class="calc-button control" data-command="DIV" onclick="handleButtonClick('/')"><i class="ri-divide-line"></i></button>
                 </div>
                 <div class="calc-buttons-row">
                     <button class="calc-button digit" data-command="4" onclick="handleButtonClick(4)"><i class="ri-number-4"></i></button>
                     <button class="calc-button digit" data-command="5" onclick="handleButtonClick(5)"><i class="ri-number-5"></i></button>
                     <button class="calc-button digit" data-command="6" onclick="handleButtonClick(6)"><i class="ri-number-6"></i></button>
-                    <button class="calc-button control" data-command="SUB" onclick="handleButtonClick('-')"><i class="ri-subtract-line"></i></button>
+                    <button class="calc-button control" data-command="MUL" onclick="handleButtonClick('*')"><i class="ri-close-line"></i></button>
                 </div>
                 <div class="calc-buttons-row">
                     <button class="calc-button digit" data-command="1" onclick="handleButtonClick(1)"><i class="ri-number-1"></i></button>
                     <button class="calc-button digit" data-command="2" onclick="handleButtonClick(2)"><i class="ri-number-2"></i></button>
                     <button class="calc-button digit" data-command="3" onclick="handleButtonClick(3)"><i class="ri-number-3"></i></button>
-                    <button class="calc-button control" data-command="ADD" onclick="handleButtonClick('+')"><i class="ri-add-line"></i></button>
+                    <button class="calc-button control" data-command="SUB" onclick="handleButtonClick('-')"><i class="ri-subtract-line"></i></button>
                 </div>
                 <div class="calc-buttons-row">
                     <button class="calc-button digit digit" data-command="0" onclick="handleButtonClick(0)"><i class="ri-number-0"></i></button>
                     <button class="calc-button digit digit" data-command="." onclick="handleButtonClick('.')">.</button>
-                    <button class="calc-button digit control x2" data-command="RES" onclick="handleButtonClick('=')">=</button>
+                    <button class="calc-button digit control inverted" data-command="RES" onclick="handleButtonClick('=')">=</button>
+                    <button class="calc-button control" data-command="ADD" onclick="handleButtonClick('+')"><i class="ri-add-line"></i></button>
                 </div>
             </div>
         </div>
